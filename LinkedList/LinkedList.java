@@ -26,6 +26,33 @@ public class LinkedList
 		}
 	}
 	
+	public void remove(int value)
+	{
+		if(head == null)
+			return;
+		else if(head.val == value)
+		{
+			head = head.next;
+		}
+		else
+		{
+			ListNode prev = null;
+			ListNode current = head;
+			
+			while(current != null && current.next != null)
+			{
+				current = current.next;
+				
+				if(current.val == value)
+				{
+					prev.next = current.next;
+				}
+				
+				prev = current;
+			}
+		}
+	}
+	
 	public void print()
 	{
 		if(head == null)
